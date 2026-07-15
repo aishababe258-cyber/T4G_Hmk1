@@ -1,0 +1,281 @@
+:root {
+  --mauve-50: #f7eef8;
+  --mauve-100: #e8d7eb;
+  --mauve-400: #b97fb1;
+  --mauve-700: #6c355b;
+  --berry-600: #a23b6c;
+  --berry-700: #7a2f4d;
+  --ink-700: #3d273a;
+  --cream: #fcf7fb;
+  --white: #ffffff;
+  --focus: #2d5dff;
+  --mobile-bg-1: #f7eaf4;
+  --mobile-bg-2: #eed8e6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink-700);
+  background: var(--cream);
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--berry-700);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  z-index: 20;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--berry-700);
+  border-radius: 999px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+main {
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--berry-700);
+  text-decoration: none;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--ink-700);
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus-visible,
+.logo:hover,
+.logo:focus-visible,
+.btn:hover,
+.btn:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+nav a:focus-visible,
+.logo:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  align-items: center;
+  background: linear-gradient(135deg, var(--mauve-50), var(--mauve-100));
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mauve-700);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--berry-700);
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--berry-600);
+  color: var(--white);
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: var(--berry-700);
+}
+
+.hero-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.features {
+  padding: 3rem 2rem;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--berry-700);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--mauve-700);
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --cream: #fdf9fc;
+    --mauve-50: #f3e8f2;
+    --mauve-100: #e8d1e2;
+    --berry-600: #9c3c67;
+    --berry-700: #7b2d51;
+    --white: #fffdfd;
+  }
+
+  .navbar {
+    padding: 0.9rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 0.75rem;
+    gap: 0.6rem;
+  }
+
+  .menu-toggle:checked + .menu-button + .nav-links {
+    display: flex;
+  }
+
+  nav a {
+    margin-left: 0;
+  }
+
+  .hero {
+    padding: 2.3rem 1rem;
+    background: linear-gradient(135deg, var(--mobile-bg-1), var(--mobile-bg-2));
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .features {
+    padding: 2.2rem 1rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+  }
+}
