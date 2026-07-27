@@ -1,11 +1,27 @@
 // Taking input from the user and storing it in a variable called  userName.
 let userName = prompt("Enter your name");
 // Prompt the user for their details
-let age = prompt("Enter your age:");
+//let age = prompt("Enter your age:");
 let email = prompt("Enter your email:");
+let age = Number(prompt("Enter your age:"));
 
+// Check the user's age
+
+if (age < 12) {
+
+    alert(`Hi ${userName}, you are ${age} years old and you are too young to register. Sorry 😔😔`);
+
+} else if (age >= 12 && age < 18) {
+
+    alert(`Hi ${userName}, you are ${age} years old and you have limited options to register for. We will keep in touch via your email: ${email}. 👏🏽👏🏽`);
+
+} else {
+
+    alert(`Hi ${userName}, you are ${age} years old and you can register for any option of your choosing. We will keep in touch via your email: ${email}. 👏🏽👏🏽`);
+
+}
 // Display the information
-alert(`Hi ${userName}, you are ${age} years old and we'll keep in touch via your email: ${email}`);
+//alert(`Hi ${userName}, you are ${age} years old and we'll keep in touch via your email: ${email}`);
 
 // A. Store your name inside a variable and log it to the console.
 let myName = "Aisha Abdul Razak";
